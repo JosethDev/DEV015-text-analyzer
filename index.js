@@ -9,11 +9,12 @@ const numbers = items[4]
 const sumNumbers = items[5]
 
 
-const textArea = document.querySelector('input[name:"user-input"]');
-textArea.addEventListener('input', getText)
+const textArea = document.querySelector('textarea[name="user-input"]');
+textArea.addEventListener('input', getText);
 
-function getText() {
-  const typeText = textArea.value
+
+function getText(event) {
+  const typeText = event.target.value
 
   //contador de palabras
   const valueWordCount = analyzer.getWordCount(typeText)
