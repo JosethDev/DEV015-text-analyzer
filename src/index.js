@@ -1,23 +1,16 @@
 import analyzer from './analyzer.js';
 
-const words = document.querySelector('.words');
-const characters = document.querySelector('.characters');
-const charactersExclSpaces = document.querySelector('.characters-excl-spaces');
-const averageWords = document.querySelector('.average-words');
-const numbers = document.querySelector('.numbers');
-const sumNumbers = document.querySelector('.sum-numbers');
+const items = document.querySelectorAll('.item');
+const words = items[0]
+const characters = items[1]
+const charactersExclSpaces = items[2]
+const averageWords = items[3]
+const numbers = items[4]
+const sumNumbers = items[5]
 
 
-const textArea = document.getElementsByName('user-input')[0];
+const textArea = document.querySelector('input[name:"user-input"]');
 textArea.addEventListener('input', getText)
-
-// titulos
-const LABEL_WORDS = "Words: "
-const LABEL_CARACTERS = "Characters: "
-const LABEL_CARACTERSEXCLSPACES = "Characters excluding spaces: "
-const LABEL_AVERAGEWORDLEGTH = "Average words length: "
-const LABEL_NUMBERS = "Numbers: "
-const LABEL_SUMNUMBERS = "Sum of numbers: "
 
 function getText() {
   const typeText = textArea.value
@@ -31,6 +24,7 @@ function getText() {
 
   const valueCharacterCountExcSpaces = analyzer.getCharacterCountExcludingSpaces(typeText)
   charactersExclSpaces.textContent = "Characters excluding spaces: " + valueCharacterCountExcSpaces
+
   const valueAverangeWordLength = analyzer.getAverageWordLength(typeText)
   averageWords.textContent = "Average words length: " + valueAverangeWordLength
   //contador de números
@@ -42,12 +36,13 @@ function getText() {
 }
 const button = document.getElementById('reset-button')
 button.addEventListener('click', cleanText)
+
 function cleanText() {
   textArea.value = '';
-  words.textContent = LABEL_WORDS
-  characters.textContent = LABEL_CARACTERS
-  charactersExclSpaces.textContent = LABEL_CARACTERSEXCLSPACES
-  averageWords.textContent = LABEL_AVERAGEWORDLEGTH
-  numbers.textContent = LABEL_NUMBERS
-  sumNumbers.textContent = LABEL_SUMNUMBERS
+  words.textContent = "Words: "
+  characters.textContent = "Characters: "
+  charactersExclSpaces.textContent = "Characters excluding spaces: "
+  averageWords.textContent = "Average words length: "
+  numbers.textContent = "Numbers: "
+  sumNumbers.textContent = "Sum of numbers: "
 }

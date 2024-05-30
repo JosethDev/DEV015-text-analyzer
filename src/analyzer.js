@@ -18,9 +18,9 @@ const analyzer = {
     if (text === '') {
       return 0;
     }
-    const regex = /[^\w]|_/g;
+    const filter = /[^\w]|_/g;
 
-    const filteredText = text.replace(regex, '');
+    const filteredText = text.replace(filter, '');
     return filteredText.length;
   },
 
@@ -28,16 +28,14 @@ const analyzer = {
     if (text === '') {
       return 0;
     }
-    const words = text.split(/[^A-Za-záéíóúÁÉÍÓÚüÜñÑ]+/u).filter(Boolean);
+    const words = text.split(" ");
 
     if (words.length === 0) {
       return 0;
     }
     let totalLength = 0; // Inicializamos el acumulador en 0
     for (let index = 0; index < words.length; index++) {
-      console.log("test count",words[index] + " - " + words[index].length)
-
-        totalLength = totalLength + words[index].length;
+      totalLength = totalLength + words[index].length;
     }
 
     const averageLength = totalLength / words.length;
