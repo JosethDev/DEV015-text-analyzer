@@ -42,7 +42,7 @@ const analyzer = {
     if (text === '') {
       return 0;
     }
-    const numbers = text.match(/(?:^|\s|-|,|\.)\d+(\.\d+)?(?=$|\s|-|,|\.)/g);
+    const numbers = text.match(/\b\d+(\.\d+)?\b/g);
     if (numbers === null) {
       return 0
     }
