@@ -19,7 +19,6 @@ const analyzer = {
       return 0;
     }
     const filter = /[^\w]|_/g;
-
     const filteredText = text.replace(filter, '');
     return filteredText.length;
   },
@@ -30,10 +29,7 @@ const analyzer = {
     }
     const words = text.split(" ");
 
-    if (words.length === 0) {
-      return 0;
-    }
-    let totalLength = 0; // Inicializamos el acumulador en 0
+    let totalLength = 0;
     for (let index = 0; index < words.length; index++) {
       totalLength = totalLength + words[index].length;
     }
@@ -63,7 +59,7 @@ const analyzer = {
     }
     let totalSum = 0;
     for (let index = 0; index < numbers.length; index++) {
-      totalSum += parseFloat(numbers[index], 10)
+      totalSum = totalSum + parseFloat(numbers[index])
     }
     return totalSum
   },

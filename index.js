@@ -16,7 +16,6 @@ textArea.addEventListener('input', getText);
 function getText(event) {
   const typeText = event.target.value
 
-  //contador de palabras
   const valueWordCount = analyzer.getWordCount(typeText)
   words.textContent = "Words: " + valueWordCount
 
@@ -28,10 +27,10 @@ function getText(event) {
 
   const valueAverangeWordLength = analyzer.getAverageWordLength(typeText)
   averageWords.textContent = "Average words length: " + valueAverangeWordLength
-  //contador de números
+  
   const valueCountNumbers = analyzer.getNumberCount(typeText)
   numbers.textContent = "Numbers: " + valueCountNumbers
-  // suma de números
+
   const valueSumNumbers = analyzer.getNumberSum(typeText)
   sumNumbers.textContent = "Sum of Numbers: " + valueSumNumbers
 }
