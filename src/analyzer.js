@@ -1,34 +1,20 @@
 const analyzer = {
   getWordCount: (text) => {
-    if (text === '') {
-      return 0;
-    }
-    const words = text.split(/[^A-Za-záéíóúÁÉÍÓÚüÜñÑ]+/u).filter(Boolean);
+    const words = text.split(/[^A-Za-záéíóúÁÉÍÓÚüÜñÑ]+/u).filter(Boolean)
     return words.length;
   },
 
   getCharacterCount: (text) => {
-    if (text === '') {
-      return 0;
-    }
     return text.length
   },
 
   getCharacterCountExcludingSpaces: (text) => {
-    if (text === '') {
-      return 0;
-    }
-    const filter = /[^\w]|_/g;
-    const filteredText = text.replace(filter, '');
+    const filteredText = text.replace(/[^\w]|_/g, '');
     return filteredText.length;
   },
 
   getAverageWordLength: (text) => {
-    if (text === '') {
-      return 0;
-    }
     const words = text.split(" ");
-
     let totalLength = 0;
     for (let index = 0; index < words.length; index++) {
       totalLength = totalLength + words[index].length;
@@ -39,9 +25,6 @@ const analyzer = {
   },
 
   getNumberCount: (text) => {
-    if (text === '') {
-      return 0;
-    }
     const numbers = text.match(/\b\d+(\.\d+)?\b/g);
     if (numbers === null) {
       return 0
@@ -50,9 +33,6 @@ const analyzer = {
   },
 
   getNumberSum: (text) => {
-    if (text === '') {
-      return 0;
-    }
     const numbers = text.match(/\b\d+(\.\d+)?\b/g);
     if (numbers === null) {
       return 0
