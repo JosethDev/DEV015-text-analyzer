@@ -12,7 +12,6 @@ const sumNumbers = items[5]
 const textArea = document.querySelector('textarea[name="user-input"]');
 textArea.addEventListener('input', getText);
 
-
 function getText(event) {
   const typeText = event.target.value
 
@@ -27,7 +26,7 @@ function getText(event) {
 
   const valueAverangeWordLength = analyzer.getAverageWordLength(typeText)
   averageWords.textContent = "Average words length: " + valueAverangeWordLength
-  
+
   const valueCountNumbers = analyzer.getNumberCount(typeText)
   numbers.textContent = "Numbers: " + valueCountNumbers
 
@@ -39,10 +38,10 @@ button.addEventListener('click', cleanText)
 
 function cleanText() {
   textArea.value = '';
-  words.textContent = "Words: "
-  characters.textContent = "Characters: "
-  charactersExclSpaces.textContent = "Characters excluding spaces: "
-  averageWords.textContent = "Average words length: "
-  numbers.textContent = "Numbers: "
-  sumNumbers.textContent = "Sum of numbers: "
+  words.textContent = "Words: 0"
+  characters.textContent = "Characters: 0"
+  charactersExclSpaces.textContent = "Characters excluding spaces: 0"
+  averageWords.textContent = "Average words length: 0"
+  numbers.textContent = "Numbers: 0"
+  sumNumbers.textContent = "Sum of numbers: 0"
 }
